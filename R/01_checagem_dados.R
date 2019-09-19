@@ -11,10 +11,10 @@ dados <- read.csv2("data/registros_BHRD_arvores.csv", sep=";",
 head(dados)
 summary(dados)
 ## shp da bacia
-bacia <- readOGR("data/Bacia/munic_BHRD.shp")
+bacia <- readOGR("data/shapefile/Bacia/munic_BHRD.shp")
 
 ## uso do solo
-solo <- readOGR("data/Bacia/uso_solo/uso_solo_bhrd.shp")
+solo <- readOGR("data/shapefile/Bacia/uso_solo/uso_solo_bhrd.shp")
 
 plot(bacia)
 
@@ -33,7 +33,7 @@ sp.bacia <- coord[bacia,]
 mycol <- rgb(0, 78, 56, max = 255, alpha = 125)
 
 
-png("arvores_bacia.png")
+png("figs/arvores_bacia.png")
 plot(bacia, main="Registros de árvores na BHRD")
 points(latitude ~ longitude, sp.bacia, col=mycol, pch=19)
 dev.off()
