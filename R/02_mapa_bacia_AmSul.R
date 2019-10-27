@@ -14,6 +14,7 @@ summary(dados)
 bacia <- readOGR("data/shapefile/Bacia/munic_BHRD.shp")
 
 ## Am do Sul
+# download shapefile at https://geo.nyu.edu/catalog/stanford-vc965bq8111
 SA <- readOGR("data/shapefile/SA/SouthAmerica.shp")
 
 SAmap <- ggplot() +

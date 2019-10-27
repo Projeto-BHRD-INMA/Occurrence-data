@@ -14,7 +14,7 @@ summary(dados)
 bacia <- readOGR("data/shapefile/Bacia/munic_BHRD.shp")
 
 ## uso do solo
-solo <- readOGR("data/shapefile/Bacia/uso_solo/uso_solo_bhrd.shp")
+#solo <- readOGR("data/shapefile/Bacia/uso_solo/uso_solo_bhrd.shp")
 
 plot(bacia)
 
@@ -30,12 +30,13 @@ bacia <- spTransform(bacia, CRS("+proj=longlat +datum=WGS84"))
 proj4string(coord) <- "+proj=longlat +datum=WGS84"
 
 sp.bacia <- coord[bacia,]
-mycol <- rgb(0, 78, 56, max = 255, alpha = 125)
-
+mycol <- rgb(0, 78, 56, 
+             maxColorValue = 255, 
+             alpha = 125)
 
 png("figs/arvores_bacia.png")
-plot(bacia, main="Registros de árvores na BHRD")
-points(latitude ~ longitude, sp.bacia, col=mycol, pch=19)
+plot(bacia, main = "Registros de árvores na BHRD")
+points(latitude ~ longitude, sp.bacia, col = mycol, pch = 19)
 dev.off()
 
 dim(sp.bacia)
