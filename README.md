@@ -1,2 +1,3 @@
-# base_dados_especies
-Base de dados das espécies na BHRD
+# Occurrence data of species from BHRD
+
+Occurrence data of plant species
